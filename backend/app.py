@@ -641,12 +641,15 @@ def health():
 # ============================================================================
 
 if __name__ == '__main__':
+    import os
     print("\n" + "="*80)
     print("🌱 COMPOST QUALITY ANALYSIS SYSTEM - API SERVER")
     print("="*80)
     print(f"✓ Model trained with {len(df_compost)} samples")
     print(f"✓ Plant database loaded with {len(df_plants)} species")
-    print("✓ Server starting on http://localhost:5000")
+    
+    port = int(os.environ.get('PORT', 5000))
+    print(f"✓ Server starting on http://0.0.0.0:{port}")
     print("="*80 + "\n")
     
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=port)
