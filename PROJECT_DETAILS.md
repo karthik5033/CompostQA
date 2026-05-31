@@ -403,10 +403,20 @@ CompostAI/
 │
 ├── frontend/
 │   ├── app/
-│   │   ├── page.tsx             # Main application page (734 lines)
+│   │   ├── analyze/
+│   │   │   └── page.tsx         # Analysis engine & visualization
+│   │   ├── history/
+│   │   │   └── page.tsx         # History & archives dashboard
+│   │   ├── page.tsx             # Landing page (Hero, Features, Stats)
 │   │   ├── layout.tsx           # Root layout
 │   │   └── globals.css          # Global styles + animations
 │   ├── components/
+│   │   ├── tailark/             # UI Building Blocks
+│   │   │   ├── hero-section.tsx
+│   │   │   ├── features-4.tsx
+│   │   │   ├── stats-strip.tsx
+│   │   │   ├── content-7.tsx
+│   │   │   └── logo.tsx
 │   │   ├── BackgroundAnimation.tsx    # Animated gradient orbs
 │   │   ├── LoadingOverlay.tsx         # Analysis loading screen
 │   │   ├── ParameterRadarChart.tsx    # 12-KPI radar chart
@@ -485,7 +495,12 @@ def analyze_plant_suitability(params):
 
 ## 🌐 Frontend Features
 
-### 1. Design System
+### 1. Application Architecture
+- **Landing Page**: Modern marketing page with Tailark components
+- **Analysis Engine**: Independent route (`/analyze`) with real-time validation
+- **History Archive**: Dedicated dashboard (`/history`) for managing reports
+
+### 2. Design System
 - **Glassmorphism**: Frosted glass cards with backdrop blur
 - **Nature Gradient**: Emerald-to-green brand colors
 - **Micro-animations**: Framer Motion hover/entrance effects
